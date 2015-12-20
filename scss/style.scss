@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background: #91C4F2;
+  display: table;
+  width: 100%;
+  height: 100vh;
+}
+
+div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.trigger {
+  position: relative;
+  background: #A14DA0;
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 50%;
+
+  //img replace
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.trigger span,
+.trigger span::before,
+.trigger span::after {
+  position: absolute;
+  width: 44px;
+  height: 4px;
+  background: white;
+  border-radius: 4px;
+}
+
+.trigger span {
+  top: calc(50% - 2px);
+  left: calc(50% - 22px);
+  transition: transform .3s;
+}
+
+.trigger span::before,
+.trigger span::after {
+  content: '';
+  left: 0;
+  transition: transform .3s, width .3s;
+}
+
+.trigger span::before {
+  bottom: 12px;
+}
+
+.trigger span::after {
+  top: 12px;
+}
+
+.trigger:hover span {
+  transform: rotate(180deg);
+}
+
+.trigger:hover span::before {
+  transform: translateX(-2px) translateY(5px) rotate(-45deg);
+  width: 50%;
+}
+
+.trigger:hover span::after {
+  transform: translateX(-2px) translateY(-5px) rotate(45deg);
+  width: 50%;
+}
